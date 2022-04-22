@@ -30,12 +30,29 @@
 
     });
 
-    function setActive(current) {
+    function setActive(current){
 
-        $(".nav-link").removeClass('current-section')
-
-        $(`.nav-link[href='#${current}']`).addClass('current-section');
+        $(`.nav-link[href='#${current}']`).addClass("active");
     }
+
+    function navScroll(){
+
+        let currentSection = $("section[id]");
+        currentSection.waypoint(function (direction) {
+
+            if(direction === 'down'){
+                setActive($(this.attr('id')));
+            }
+        });
+
+    }
+
+    // function setActive(current) {
+    //
+    //     $(".nav-link").removeClass('current-section');
+    //
+    //     $(`.nav-link[href='#${current}']`).addClass('active');
+    // };
 
 
 

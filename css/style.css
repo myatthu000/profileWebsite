@@ -39,7 +39,10 @@ body{
 .nav-link.current-section{
     border: 2px solid #db1717;
 }
-
+.navbar-dark .navbar-nav .nav-link.active{
+    border: 3px solid var(--primary);
+    z-index: 1007;
+}
 .site-nav-scroll .nav-link{
     color: var(--primary) !important;
 }
